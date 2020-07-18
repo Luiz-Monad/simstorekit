@@ -22,52 +22,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1502A02A13CE163E00CC4FB4 /* ILSimTransactionSimulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1502A02813CE163E00CC4FB4 /* ILSimTransactionSimulator.h */; };
-		1502A02B13CE163E00CC4FB4 /* ILSimTransactionSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1502A02913CE163E00CC4FB4 /* ILSimTransactionSimulator.m */; };
-		1502A09213CE205A00CC4FB4 /* SimStoreKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* SimStoreKit_Prefix.pch */; };
-		1502A09313CE205A00CC4FB4 /* ILSimSKPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = 155551D8111842630082EF0A /* ILSimSKPayment.h */; };
-		1502A09413CE205A00CC4FB4 /* ILSimSKProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = 155551EA111844230082EF0A /* ILSimSKProduct.h */; };
-		1502A09513CE205A00CC4FB4 /* ILSimSKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 155551F0111844C50082EF0A /* ILSimSKRequest.h */; };
-		1502A09613CE205A00CC4FB4 /* ILSimSKProductsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 155551F4111845EE0082EF0A /* ILSimSKProductsRequest.h */; };
-		1502A09713CE205A00CC4FB4 /* ILSimSKPaymentTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 1555520D1118AA850082EF0A /* ILSimSKPaymentTransaction.h */; };
-		1502A09813CE205A00CC4FB4 /* ILSimSKPaymentTransaction_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A2B0381118B27400A39BCE /* ILSimSKPaymentTransaction_Private.h */; };
-		1502A09913CE205A00CC4FB4 /* ILSimSKPaymentQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A2B0681118B63600A39BCE /* ILSimSKPaymentQueue.h */; };
-		1502A09A13CE205A00CC4FB4 /* ILSimSKProduct_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A2B0BC1118C6B600A39BCE /* ILSimSKProduct_Private.h */; };
-		1502A09B13CE205A00CC4FB4 /* ILSimSKTiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A2B0C01118C74800A39BCE /* ILSimSKTiers.h */; };
-		1502A09C13CE205A00CC4FB4 /* ILSimStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 15491D2D1119C69B000CE8BB /* ILSimStoreKit.h */; };
-		1502A09D13CE205A00CC4FB4 /* ILSimTransactionSimulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1502A02813CE163E00CC4FB4 /* ILSimTransactionSimulator.h */; };
-		1502A09F13CE205A00CC4FB4 /* ILSimSKPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 155551D9111842630082EF0A /* ILSimSKPayment.m */; };
-		1502A0A013CE205A00CC4FB4 /* ILSimSKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 155551EB111844230082EF0A /* ILSimSKProduct.m */; };
-		1502A0A113CE205A00CC4FB4 /* ILSimSKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 155551F1111844C50082EF0A /* ILSimSKRequest.m */; };
-		1502A0A213CE205A00CC4FB4 /* ILSimSKProductsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 155551F5111845EE0082EF0A /* ILSimSKProductsRequest.m */; };
-		1502A0A313CE205A00CC4FB4 /* ILSimSKPaymentTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1555520E1118AA850082EF0A /* ILSimSKPaymentTransaction.m */; };
-		1502A0A413CE205A00CC4FB4 /* ILSimSKPaymentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A2B0691118B63600A39BCE /* ILSimSKPaymentQueue.m */; };
-		1502A0A513CE205A00CC4FB4 /* ILSimSKTiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A2B0C11118C74800A39BCE /* ILSimSKTiers.m */; };
-		1502A0A613CE205A00CC4FB4 /* ILSimTransactionSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1502A02913CE163E00CC4FB4 /* ILSimTransactionSimulator.m */; };
 		1502A0A813CE205A00CC4FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		15491D2E1119C69B000CE8BB /* ILSimStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 15491D2D1119C69B000CE8BB /* ILSimStoreKit.h */; };
 		15491D501119C781000CE8BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15491D4F1119C781000CE8BB /* main.m */; };
 		15491D531119C79B000CE8BB /* libSimStoreKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libSimStoreKit-iOS.a */; };
 		15491D561119C7C7000CE8BB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15491D551119C7C7000CE8BB /* MainWindow.xib */; };
 		15491D5E1119C7FB000CE8BB /* TestApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 15491D5D1119C7FB000CE8BB /* TestApp.m */; };
 		15491DEC1119CF60000CE8BB /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15491DEB1119CF60000CE8BB /* Products.plist */; };
-		155551DA111842630082EF0A /* ILSimSKPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = 155551D8111842630082EF0A /* ILSimSKPayment.h */; };
-		155551DB111842630082EF0A /* ILSimSKPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 155551D9111842630082EF0A /* ILSimSKPayment.m */; };
-		155551EC111844230082EF0A /* ILSimSKProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = 155551EA111844230082EF0A /* ILSimSKProduct.h */; };
-		155551ED111844230082EF0A /* ILSimSKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 155551EB111844230082EF0A /* ILSimSKProduct.m */; };
-		155551F2111844C50082EF0A /* ILSimSKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 155551F0111844C50082EF0A /* ILSimSKRequest.h */; };
-		155551F3111844C50082EF0A /* ILSimSKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 155551F1111844C50082EF0A /* ILSimSKRequest.m */; };
-		155551F6111845EE0082EF0A /* ILSimSKProductsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 155551F4111845EE0082EF0A /* ILSimSKProductsRequest.h */; };
-		155551F7111845EE0082EF0A /* ILSimSKProductsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 155551F5111845EE0082EF0A /* ILSimSKProductsRequest.m */; };
-		1555520F1118AA850082EF0A /* ILSimSKPaymentTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 1555520D1118AA850082EF0A /* ILSimSKPaymentTransaction.h */; };
-		155552101118AA850082EF0A /* ILSimSKPaymentTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1555520E1118AA850082EF0A /* ILSimSKPaymentTransaction.m */; };
-		15A2B0391118B27400A39BCE /* ILSimSKPaymentTransaction_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A2B0381118B27400A39BCE /* ILSimSKPaymentTransaction_Private.h */; };
-		15A2B06A1118B63600A39BCE /* ILSimSKPaymentQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A2B0681118B63600A39BCE /* ILSimSKPaymentQueue.h */; };
-		15A2B06B1118B63600A39BCE /* ILSimSKPaymentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A2B0691118B63600A39BCE /* ILSimSKPaymentQueue.m */; };
-		15A2B0BD1118C6B600A39BCE /* ILSimSKProduct_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A2B0BC1118C6B600A39BCE /* ILSimSKProduct_Private.h */; };
-		15A2B0C21118C74800A39BCE /* ILSimSKTiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A2B0C01118C74800A39BCE /* ILSimSKTiers.h */; };
-		15A2B0C31118C74800A39BCE /* ILSimSKTiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A2B0C11118C74800A39BCE /* ILSimSKTiers.m */; };
-		AA747D9F0F9514B9006C5449 /* SimStoreKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* SimStoreKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,14 +36,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* SimStoreKit-iOS */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = "SimStoreKit-iOS";
 		};
 		1502A0EC13CE228300CC4FB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1502A09013CE205A00CC4FB4 /* SimStoreKit-Mac */;
+			remoteGlobalIDString = 1502A09013CE205A00CC4FB4;
 			remoteInfo = "SimStoreKit-Mac";
 		};
 		15491D511119C792000CE8BB /* PBXContainerItemProxy */ = {
@@ -96,10 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1502A02813CE163E00CC4FB4 /* ILSimTransactionSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimTransactionSimulator.h; sourceTree = "<group>"; };
-		1502A02913CE163E00CC4FB4 /* ILSimTransactionSimulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSimTransactionSimulator.m; sourceTree = "<group>"; };
 		1502A0AC13CE205A00CC4FB4 /* libSimStoreKit-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSimStoreKit-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		15491D2D1119C69B000CE8BB /* ILSimStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimStoreKit.h; sourceTree = "<group>"; };
 		15491D341119C715000CE8BB /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15491D361119C715000CE8BB /* TestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		15491D4F1119C781000CE8BB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,23 +64,6 @@
 		15491D5C1119C7FB000CE8BB /* TestApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp.h; sourceTree = "<group>"; };
 		15491D5D1119C7FB000CE8BB /* TestApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApp.m; sourceTree = "<group>"; };
 		15491DEB1119CF60000CE8BB /* Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
-		155551D8111842630082EF0A /* ILSimSKPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKPayment.h; sourceTree = "<group>"; };
-		155551D9111842630082EF0A /* ILSimSKPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSimSKPayment.m; sourceTree = "<group>"; };
-		155551EA111844230082EF0A /* ILSimSKProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKProduct.h; sourceTree = "<group>"; };
-		155551EB111844230082EF0A /* ILSimSKProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSimSKProduct.m; sourceTree = "<group>"; };
-		155551F0111844C50082EF0A /* ILSimSKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKRequest.h; sourceTree = "<group>"; };
-		155551F1111844C50082EF0A /* ILSimSKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSimSKRequest.m; sourceTree = "<group>"; };
-		155551F4111845EE0082EF0A /* ILSimSKProductsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKProductsRequest.h; sourceTree = "<group>"; };
-		155551F5111845EE0082EF0A /* ILSimSKProductsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSimSKProductsRequest.m; sourceTree = "<group>"; };
-		1555520D1118AA850082EF0A /* ILSimSKPaymentTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKPaymentTransaction.h; sourceTree = "<group>"; };
-		1555520E1118AA850082EF0A /* ILSimSKPaymentTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSimSKPaymentTransaction.m; sourceTree = "<group>"; };
-		15A2B0381118B27400A39BCE /* ILSimSKPaymentTransaction_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKPaymentTransaction_Private.h; sourceTree = "<group>"; };
-		15A2B0681118B63600A39BCE /* ILSimSKPaymentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKPaymentQueue.h; sourceTree = "<group>"; };
-		15A2B0691118B63600A39BCE /* ILSimSKPaymentQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSimSKPaymentQueue.m; sourceTree = "<group>"; };
-		15A2B0BC1118C6B600A39BCE /* ILSimSKProduct_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKProduct_Private.h; sourceTree = "<group>"; };
-		15A2B0C01118C74800A39BCE /* ILSimSKTiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSimSKTiers.h; sourceTree = "<group>"; };
-		15A2B0C11118C74800A39BCE /* ILSimSKTiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSimSKTiers.m; sourceTree = "<group>"; };
-		AA747D9E0F9514B9006C5449 /* SimStoreKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimStoreKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libSimStoreKit-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSimStoreKit-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -190,24 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				15491D3A1119C72A000CE8BB /* Test */,
-				15A2B0BF1118C74000A39BCE /* Tiers */,
-				1555520D1118AA850082EF0A /* ILSimSKPaymentTransaction.h */,
-				1555520E1118AA850082EF0A /* ILSimSKPaymentTransaction.m */,
-				15A2B0381118B27400A39BCE /* ILSimSKPaymentTransaction_Private.h */,
-				155551F4111845EE0082EF0A /* ILSimSKProductsRequest.h */,
-				155551F5111845EE0082EF0A /* ILSimSKProductsRequest.m */,
-				15A2B0681118B63600A39BCE /* ILSimSKPaymentQueue.h */,
-				15A2B0691118B63600A39BCE /* ILSimSKPaymentQueue.m */,
-				155551F0111844C50082EF0A /* ILSimSKRequest.h */,
-				155551F1111844C50082EF0A /* ILSimSKRequest.m */,
-				155551D8111842630082EF0A /* ILSimSKPayment.h */,
-				155551D9111842630082EF0A /* ILSimSKPayment.m */,
-				155551EA111844230082EF0A /* ILSimSKProduct.h */,
-				15A2B0BC1118C6B600A39BCE /* ILSimSKProduct_Private.h */,
-				155551EB111844230082EF0A /* ILSimSKProduct.m */,
-				15491D2D1119C69B000CE8BB /* ILSimStoreKit.h */,
-				1502A02813CE163E00CC4FB4 /* ILSimTransactionSimulator.h */,
-				1502A02913CE163E00CC4FB4 /* ILSimTransactionSimulator.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -232,19 +154,9 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		15A2B0BF1118C74000A39BCE /* Tiers */ = {
-			isa = PBXGroup;
-			children = (
-				15A2B0C01118C74800A39BCE /* ILSimSKTiers.h */,
-				15A2B0C11118C74800A39BCE /* ILSimSKTiers.m */,
-			);
-			name = Tiers;
-			sourceTree = "<group>";
-		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA747D9E0F9514B9006C5449 /* SimStoreKit_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -256,18 +168,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1502A09213CE205A00CC4FB4 /* SimStoreKit_Prefix.pch in Headers */,
-				1502A09313CE205A00CC4FB4 /* ILSimSKPayment.h in Headers */,
-				1502A09413CE205A00CC4FB4 /* ILSimSKProduct.h in Headers */,
-				1502A09513CE205A00CC4FB4 /* ILSimSKRequest.h in Headers */,
-				1502A09613CE205A00CC4FB4 /* ILSimSKProductsRequest.h in Headers */,
-				1502A09713CE205A00CC4FB4 /* ILSimSKPaymentTransaction.h in Headers */,
-				1502A09813CE205A00CC4FB4 /* ILSimSKPaymentTransaction_Private.h in Headers */,
-				1502A09913CE205A00CC4FB4 /* ILSimSKPaymentQueue.h in Headers */,
-				1502A09A13CE205A00CC4FB4 /* ILSimSKProduct_Private.h in Headers */,
-				1502A09B13CE205A00CC4FB4 /* ILSimSKTiers.h in Headers */,
-				1502A09C13CE205A00CC4FB4 /* ILSimStoreKit.h in Headers */,
-				1502A09D13CE205A00CC4FB4 /* ILSimTransactionSimulator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,18 +175,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA747D9F0F9514B9006C5449 /* SimStoreKit_Prefix.pch in Headers */,
-				155551DA111842630082EF0A /* ILSimSKPayment.h in Headers */,
-				155551EC111844230082EF0A /* ILSimSKProduct.h in Headers */,
-				155551F2111844C50082EF0A /* ILSimSKRequest.h in Headers */,
-				155551F6111845EE0082EF0A /* ILSimSKProductsRequest.h in Headers */,
-				1555520F1118AA850082EF0A /* ILSimSKPaymentTransaction.h in Headers */,
-				15A2B0391118B27400A39BCE /* ILSimSKPaymentTransaction_Private.h in Headers */,
-				15A2B06A1118B63600A39BCE /* ILSimSKPaymentQueue.h in Headers */,
-				15A2B0BD1118C6B600A39BCE /* ILSimSKProduct_Private.h in Headers */,
-				15A2B0C21118C74800A39BCE /* ILSimSKTiers.h in Headers */,
-				15491D2E1119C69B000CE8BB /* ILSimStoreKit.h in Headers */,
-				1502A02A13CE163E00CC4FB4 /* ILSimTransactionSimulator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +238,10 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "SimStoreKit" */;
+			attributes = {
+				LastUpgradeCheck = 1150;
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TestApp" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -390,14 +281,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1502A09F13CE205A00CC4FB4 /* ILSimSKPayment.m in Sources */,
-				1502A0A013CE205A00CC4FB4 /* ILSimSKProduct.m in Sources */,
-				1502A0A113CE205A00CC4FB4 /* ILSimSKRequest.m in Sources */,
-				1502A0A213CE205A00CC4FB4 /* ILSimSKProductsRequest.m in Sources */,
-				1502A0A313CE205A00CC4FB4 /* ILSimSKPaymentTransaction.m in Sources */,
-				1502A0A413CE205A00CC4FB4 /* ILSimSKPaymentQueue.m in Sources */,
-				1502A0A513CE205A00CC4FB4 /* ILSimSKTiers.m in Sources */,
-				1502A0A613CE205A00CC4FB4 /* ILSimTransactionSimulator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,14 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				155551DB111842630082EF0A /* ILSimSKPayment.m in Sources */,
-				155551ED111844230082EF0A /* ILSimSKProduct.m in Sources */,
-				155551F3111844C50082EF0A /* ILSimSKRequest.m in Sources */,
-				155551F7111845EE0082EF0A /* ILSimSKProductsRequest.m in Sources */,
-				155552101118AA850082EF0A /* ILSimSKPaymentTransaction.m in Sources */,
-				15A2B06B1118B63600A39BCE /* ILSimSKPaymentQueue.m in Sources */,
-				15A2B0C31118C74800A39BCE /* ILSimSKTiers.m in Sources */,
-				1502A02B13CE163E00CC4FB4 /* ILSimTransactionSimulator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,7 +527,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "SimStoreKit" */ = {
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
