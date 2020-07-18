@@ -6,8 +6,10 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ILSimTransactionSimulator.h"
+#import "ILSimStoreKit.h"
 #if kILSimAllowSimulatedStoreKit
+
+#import "ILSimTransactionSimulator.h"
 
 #if TARGET_OS_IPHONE
 
@@ -52,11 +54,11 @@ static void* const kILSimDefaultTransactionSimulator_iOSCompletionHandlerKey = &
 			completionHandler(nil);
 			break;
 		case 1:
-			completionHandler([NSError errorWithDomain:kILSimSKErrorDomain code:kILSimSKErrorUnknown userInfo:nil]);
+			completionHandler([NSError errorWithDomain:kILSimSKErrorDomain code:ILSimSKErrorUnknown userInfo:nil]);
 			break;
 		case 2:
 		default:
-			completionHandler([NSError errorWithDomain:kILSimSKErrorDomain code:kILSimSKErrorPaymentCancelled userInfo:nil]);
+			completionHandler([NSError errorWithDomain:kILSimSKErrorDomain code:ILSimSKErrorPaymentCancelled userInfo:nil]);
 			break;
 	}
 }

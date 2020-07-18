@@ -39,21 +39,20 @@
 // Default is USD.
 #define kILSimSKStorefrontCodeEnvironmentVariable @"ILSimSKStorefrontCode"
 
+extern NSString * _Nonnull const kILSimSKErrorDomain;
 
-extern NSString* const kILSimSKErrorDomain;
-
-enum {
+typedef NS_ENUM(NSInteger, ILSimSKError) {
 	// doubles from SKErrorDomain
-	kILSimSKErrorUnknown,
-	kILSimSKErrorClientInvalid,
-	kILSimSKErrorPaymentCancelled,
-	kILSimSKErrorPaymentInvalid,
-	kILSimSKErrorPaymentNotAllowed,
+	ILSimSKErrorUnknown,
+	ILSimSKErrorClientInvalid,
+	ILSimSKErrorPaymentCancelled,
+	ILSimSKErrorPaymentInvalid,
+	ILSimSKErrorPaymentNotAllowed,
 };
 
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol ILSimSKPaymentTransactionObserver;
-
 
 @interface ILSimSKPaymentQueue : NSObject {
 	NSMutableSet* observers;
@@ -65,34 +64,37 @@ enum {
 
 + (BOOL) canMakePayments;
 
-+ (ILSimSKPaymentQueue*) defaultQueue;
++ (instancetype) defaultQueue;
 
-- (void) addPayment:(ILSimSKPayment*) p;
-- (void) addTransactionObserver:(id <ILSimSKPaymentTransactionObserver>) o;
-- (void) removeTransactionObserver:(id <ILSimSKPaymentTransactionObserver>) o;
+- (void) addPayment:(ILSimSKPayment*) payment;
 
-- (void) finishTransaction:(ILSimSKPaymentTransaction*) t;
+- (void) addTransactionObserver:(id <ILSimSKPaymentTransactionObserver>) observer;
+- (void) removeTransactionObserver:(id <ILSimSKPaymentTransactionObserver>) observer;
+
+- (void) finishTransaction:(ILSimSKPaymentTransaction*) transaction;
 
 - (void) restoreCompletedTransactions;
 
-@property(nonatomic, readonly) NSArray* transactions;
+@property(nonatomic, readonly) NSArray<ILSimSKPaymentTransaction*>* transactions;
 
 @property(nonatomic, assign) id <ILSimTransactionSimulator> transactionSimulator;
 
 @end
 
-
 @protocol ILSimSKPaymentTransactionObserver <NSObject>
+
 @required
-- (void) paymentQueue:(ILSimSKPaymentQueue*) queue updatedTransactions:(NSArray*) transactions;
+- (void) paymentQueue:(ILSimSKPaymentQueue*) queue updatedTransactions:(NSArray<ILSimSKPaymentTransaction*>*) transactions;
 
 @optional
-- (void) paymentQueue:(ILSimSKPaymentQueue*) queue removedTransactions:(NSArray*) transactions;
+- (void) paymentQueue:(ILSimSKPaymentQueue*) queue removedTransactions:(NSArray<ILSimSKPaymentTransaction*>*) transactions;
 
 - (void) paymentQueue:(ILSimSKPaymentQueue*) queue restoreCompletedTransactionsFailedWithError:(NSError*) e;
 
 - (void) paymentQueueRestoreCompletedTransactionsFinished:(ILSimSKPaymentQueue*) queue;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif // #if kILSimAllowSimulatedStoreKit

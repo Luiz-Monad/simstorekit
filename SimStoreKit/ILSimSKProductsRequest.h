@@ -9,43 +9,41 @@
 #import "ILSimStoreKit.h"
 #if kILSimAllowSimulatedStoreKit
 
-
 #import <Foundation/Foundation.h>
 
 #import "ILSimSKRequest.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol ILSimSKProductsRequestDelegate;
 
 @interface ILSimSKProductsRequest : ILSimSKRequest {
-	id <ILSimSKProductsRequestDelegate> delegate;
 	BOOL cancelled;
 	NSSet* ids;
 }
 
-- (id) initWithProductIdentifiers:(NSSet*) productIdentifiers;
-@property(assign) id <ILSimSKProductsRequestDelegate> delegate;
+- (instancetype) initWithProductIdentifiers:(NSSet*) productIdentifiers;
+
+@property(assign, nullable) id <ILSimSKProductsRequestDelegate> delegate;
 
 + (ILSimSKProduct*) simulatedProductForIdentifier:(NSString*) ident;
 
 @end
 
 @interface ILSimSKProductsResponse : NSObject {
-	NSArray* invalidProductIdentifiers;
-	NSArray* products;
 }
 
-@property(nonatomic, readonly) NSArray* invalidProductIdentifiers;
-@property(nonatomic, readonly) NSArray* products;
+@property(nonatomic, readonly) NSArray<NSString*>* invalidProductIdentifiers;
+@property(nonatomic, readonly) NSArray<ILSimSKProduct*>* products;
 
 @end
-
-
-
 
 @protocol ILSimSKProductsRequestDelegate <ILSimSKRequestDelegate>
 
 - (void) productsRequest:(ILSimSKProductsRequest*) request didReceiveResponse:(ILSimSKProductsResponse*) response;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif // #if kILSimAllowSimulatedStoreKit

@@ -1,19 +1,11 @@
-
-#if !defined(kILSimAllowSimulatedStoreKit) && TARGET_IPHONE_SIMULATOR
+#undef kILSimAllowSimulatedStoreKit
+#undef kILSimReplaceRealStoreKit
 #define kILSimAllowSimulatedStoreKit 1
-#endif
+#define kILSimReplaceRealStoreKit 1
 
 #if kILSimAllowSimulatedStoreKit
 
-	#import "ILSimSKTiers.h"
-	#import "ILSimSKPaymentTransaction.h"
-	#import "ILSimSKProductsRequest.h"
-	#import "ILSimSKPaymentQueue.h"
-	#import "ILSimSKRequest.h"
-	#import "ILSimSKPayment.h"
-	#import "ILSimSKProduct.h"
-
-	#if ILSimReplaceRealStoreKit
+	#if kILSimReplaceRealStoreKit
 
 		#define SKPaymentTransaction ILSimSKPaymentTransaction
 		#define SKProductsRequest ILSimSKProductsRequest

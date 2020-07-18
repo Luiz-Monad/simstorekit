@@ -9,26 +9,23 @@
 #import "ILSimStoreKit.h"
 #if kILSimAllowSimulatedStoreKit
 
-
 #import <Foundation/Foundation.h>
 
 #import "ILSimSKProduct.h"
 #import "ILSimSKRequest.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol ILSimSKRequestDelegate;
 
-@interface ILSimSKRequest : NSObject {
-
-}
+@interface ILSimSKRequest : NSObject {}
 
 - (void) start;
 - (void) cancel;
 
-@property(assign) id <ILSimSKRequestDelegate> delegate;
+@property(assign, nullable) id <ILSimSKRequestDelegate> delegate;
 
 @end
-
-
 
 @protocol ILSimSKRequestDelegate <NSObject>
 
@@ -37,5 +34,7 @@
 - (void)requestDidFinish:(ILSimSKRequest *)request;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif // #if kILSimAllowSimulatedStoreKit

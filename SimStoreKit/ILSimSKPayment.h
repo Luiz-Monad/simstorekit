@@ -9,32 +9,31 @@
 #import "ILSimStoreKit.h"
 #if kILSimAllowSimulatedStoreKit
 
-
 #import <Foundation/Foundation.h>
 
 @class ILSimSKProduct;
 
-@interface ILSimSKPayment : NSObject <NSCopying, NSMutableCopying> {
-	NSString* productIdentifier;
-	NSInteger quantity;
-	NSData* requestData;
-}
+NS_ASSUME_NONNULL_BEGIN
 
-+ paymentWithProduct:(ILSimSKProduct*) product;
-+ paymentWithProductIdentifier:(NSString*) identifier;
+@interface ILSimSKPayment : NSObject <NSCopying, NSMutableCopying> {}
+
++ (instancetype)paymentWithProduct:(ILSimSKProduct*) product;
++ (instancetype)paymentWithProductIdentifier:(NSString*) identifier;
 
 @property(nonatomic, copy, readonly) NSString* productIdentifier;
+@property(nonatomic, copy, readonly, nullable) NSData* requestData;
 @property(nonatomic, readonly) NSInteger quantity;
-@property(nonatomic, copy, readonly) NSData* requestData;
 
 @end
 
 @interface ILSimSKMutablePayment : ILSimSKPayment {}
 
 @property(nonatomic, copy) NSString* productIdentifier;
+@property(nonatomic, copy, nullable) NSData* requestData;
 @property(nonatomic) NSInteger quantity;
-@property(nonatomic, copy) NSData* requestData;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif // #if kILSimAllowSimulatedStoreKit

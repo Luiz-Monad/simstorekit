@@ -9,16 +9,13 @@
 #import "ILSimStoreKit.h"
 #if kILSimAllowSimulatedStoreKit
 
-
 #import <Foundation/Foundation.h>
 
 typedef NSInteger ILSimSKSimulatedProductType;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface ILSimSKProduct : NSObject {
-	NSString* localizedDescription, * localizedTitle;
-	NSLocale* priceLocale;
-	NSDecimalNumber* price;
-	NSString* productIdentifier;
 	ILSimSKSimulatedProductType simulatedProductType;
 }
 
@@ -31,5 +28,7 @@ typedef NSInteger ILSimSKSimulatedProductType;
 @property(nonatomic, readonly, copy) NSString* productIdentifier;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif // #if kILSimAllowSimulatedStoreKit

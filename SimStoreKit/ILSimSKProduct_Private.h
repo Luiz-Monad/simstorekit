@@ -5,7 +5,7 @@
 
 #import "ILSimSKProduct.h"
 
-enum {
+typedef NS_ENUM(NSInteger, ILSimSimulatedProductType) {
 	kILSimSimulatedProductTypeNonConsumable = 0,
 	kILSimSimulatedProductTypeConsumable,
 	kILSimSimulatedProductTypeSubscription,

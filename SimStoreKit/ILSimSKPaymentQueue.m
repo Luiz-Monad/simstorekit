@@ -75,7 +75,7 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 	NSAssert([ILSimSKPaymentQueue canMakePayments], @"Payments must be available to add payments onto the queue.");
 	
 	ILSimSKPaymentTransaction* t = [[ILSimSKPaymentTransaction new] autorelease];
-	t.transactionState = kILSimSKPaymentTransactionStatePurchasing;
+	t.transactionState = ILSimSKPaymentTransactionStatePurchasing;
 	t.payment = p;
 	t.transactionDate = [NSDate date];
 	
@@ -95,7 +95,7 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 	
 	self.currentTransaction = [transactions objectAtIndex:0];
 	
-	self.currentTransaction.transactionState = kILSimSKPaymentTransactionStatePurchasing;
+	self.currentTransaction.transactionState = ILSimSKPaymentTransactionStatePurchasing;
 	for (id <ILSimSKPaymentTransactionObserver> o in observers)
 		[o paymentQueue:self updatedTransactions:[NSArray arrayWithObject:self.currentTransaction]];
 	
@@ -108,7 +108,7 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 	if ([action isEqual:@"AlwaysSucceed"])
 		[self succeed];
 	else if ([action isEqual:@"AlwaysFail"])
-		[self fail:[NSError errorWithDomain:kILSimSKErrorDomain code:kILSimSKErrorPaymentNotAllowed userInfo:nil]];
+		[self fail:[NSError errorWithDomain:kILSimSKErrorDomain code:ILSimSKErrorPaymentNotAllowed userInfo:nil]];
 	else
 		[self ask];
 }
@@ -118,7 +118,7 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 	ILSimSKProduct* p = [ILSimSKProductsRequest simulatedProductForIdentifier:self.currentTransaction.payment.productIdentifier];
 	
 	if (!p)
-		[self fail:[NSError errorWithDomain:kILSimSKErrorDomain code:kILSimSKErrorPaymentInvalid userInfo:nil]];
+		[self fail:[NSError errorWithDomain:kILSimSKErrorDomain code:ILSimSKErrorPaymentInvalid userInfo:nil]];
 	else {
 		[self.transactionSimulator simulateTransaction:self.currentTransaction product:p forQueue:self completionHandler:^(NSError* e) {
 			if (!e)
@@ -151,11 +151,11 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 			[err release];
 		}
 		
-		[self fail:[NSError errorWithDomain:kILSimSKErrorDomain code:kILSimSKErrorUnknown userInfo:nil]];
+		[self fail:[NSError errorWithDomain:kILSimSKErrorDomain code:ILSimSKErrorUnknown userInfo:nil]];
 		return;
 	}
 	
-	self.currentTransaction.transactionState = kILSimSKPaymentTransactionStatePurchased;
+	self.currentTransaction.transactionState = ILSimSKPaymentTransactionStatePurchased;
 
 	NSMutableArray* a = [[[[NSUserDefaults standardUserDefaults] arrayForKey:@"ILSimSKTransactions"] mutableCopy] autorelease];
 	if (!a)
@@ -188,7 +188,7 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 - (void) fail:(NSError*) e;
 {
 	self.currentTransaction.error = e;
-	self.currentTransaction.transactionState = kILSimSKPaymentTransactionStateFailed;
+	self.currentTransaction.transactionState = ILSimSKPaymentTransactionStateFailed;
 	NSArray* t = [NSArray arrayWithObject:self.currentTransaction];
 	
 	for (id <ILSimSKPaymentTransactionObserver> o in observers)
@@ -229,7 +229,7 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 		
 		ILSimSKPaymentTransaction* t = [[ILSimSKPaymentTransaction new] autorelease];
 		t.transactionDate = [NSDate date];
-		t.transactionState = kILSimSKPaymentTransactionStateRestored;
+		t.transactionState = ILSimSKPaymentTransactionStateRestored;
 		t.transactionIdentifier = [NSString stringWithFormat:@"%lx", random()];
 		
 		ILSimSKPaymentTransaction* original = [[ILSimSKPaymentTransaction new] autorelease];
