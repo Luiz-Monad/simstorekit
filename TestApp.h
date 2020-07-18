@@ -6,9 +6,8 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#define ILSimReplaceRealStoreKit 1
-#import "ILSimStoreKit.h"
+@import UIKit;
+@import SimStoreKit;
 
 @interface TestApp : NSObject <UIApplicationDelegate, SKPaymentTransactionObserver, SKProductsRequestDelegate> {
 	IBOutlet UIWindow* window;
