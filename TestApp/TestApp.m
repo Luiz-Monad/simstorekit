@@ -10,13 +10,15 @@
 
 @implementation TestApp
 
-- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+- (id) init
 {
+#if TARGET_OS_MAC && !TARGET_OS_IPHONE
 	setenv("ILSimSKProductsPlist", [[[NSBundle mainBundle] pathForResource:@"Products" ofType:@"plist"] fileSystemRepresentation], 1);
+#endif
 	
+    self = [super init];
 	[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-	[window makeKeyAndVisible];
-	return YES;
+    return self;
 }
 
 - (IBAction) buy;
@@ -49,7 +51,7 @@
 	
 	for (SKPaymentTransaction* t in transactions) {
 		if (t.transactionState == SKPaymentTransactionStatePurchased || t.transactionState == SKPaymentTransactionStateFailed) {
-			NSLog(@"%@ -> state %d", t, t.transactionState);
+            NSLog(@"%@ -> state %ld", t, (long)t.transactionState);
 			[queue finishTransaction:t];
 		}
 	}

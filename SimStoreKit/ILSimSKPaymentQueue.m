@@ -63,7 +63,8 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 
 + (ILSimSKPaymentQueue*) defaultQueue;
 {
-	static id me = nil; if (!me)
+	static id me = nil;
+    if (!me)
 		me = [self new];
 	
 	return me;
@@ -101,7 +102,7 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 	
 	srandomdev();
 	long l = random();
-	self.currentTransaction.transactionIdentifier = [NSString stringWithFormat:@"%xl", l];
+	self.currentTransaction.transactionIdentifier = [NSString stringWithFormat:@"%lx", l];
 	
 	NSString* action = [[[NSProcessInfo processInfo] environment] objectForKey:@"ILSimSKTransactionResult"];
 	
@@ -141,8 +142,13 @@ NSString* const kILSimSKErrorDomain = @"net.infinite-labs.SimulatedStoreKit";
 					   self.currentTransaction.transactionDate, @"Date",
 					   nil];
 	
-	NSString* err = nil;
-	NSData* d = [NSPropertyListSerialization dataFromPropertyList:r format:NSPropertyListBinaryFormat_v1_0 errorDescription:&err];
+	NSError* err = nil;
+    NSPropertyListFormat fmt = NSPropertyListBinaryFormat_v1_0;
+    NSData* d = [NSPropertyListSerialization
+                 propertyListWithData:(id)r
+                 options:NSPropertyListImmutable
+                 format:&fmt
+                 error:&err];
 	if (d)
 		self.currentTransaction.transactionReceipt = d;
 	else {

@@ -24,7 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype) initWithProductIdentifiers:(NSSet*) productIdentifiers;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-property-type"
 @property(assign, nullable) id <ILSimSKProductsRequestDelegate> delegate;
+#pragma clang diagnostic pop
 
 + (ILSimSKProduct*) simulatedProductForIdentifier:(NSString*) ident;
 

@@ -9,10 +9,11 @@
 @import UIKit;
 @import SimStoreKit;
 
-@interface TestApp : NSObject <UIApplicationDelegate, SKPaymentTransactionObserver, SKProductsRequestDelegate> {
-	IBOutlet UIWindow* window;
-}
+@interface TestApp : NSObject <SKPaymentTransactionObserver, SKProductsRequestDelegate>
 
+@property (weak, nonatomic, nullable) IBOutlet UIWindow * window;
+
+- (instancetype _Nonnull) init;
 - (IBAction) buy;
 - (IBAction) restore;
 

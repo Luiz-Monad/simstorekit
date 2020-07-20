@@ -18,10 +18,10 @@
 		#define SKRequestDelegate ILSimSKRequestDelegate
 		#define SKProductsResponse ILSimSKProductsResponse
 
-		#define SKPaymentTransactionStatePurchased kILSimSKPaymentTransactionStatePurchased
-		#define SKPaymentTransactionStateFailed kILSimSKPaymentTransactionStateFailed
-		#define SKPaymentTransactionStatePurchasing kILSimSKPaymentTransactionStatePurchasing
-		#define SKPaymentTransactionStateRestored kILSimSKPaymentTransactionStateRestored
+		#define SKPaymentTransactionStatePurchased ILSimSKPaymentTransactionStatePurchased
+		#define SKPaymentTransactionStateFailed ILSimSKPaymentTransactionStateFailed
+		#define SKPaymentTransactionStatePurchasing ILSimSKPaymentTransactionStatePurchasing
+		#define SKPaymentTransactionStateRestored ILSimSKPaymentTransactionStateRestored
 
 		#define SKErrorDomain kILSimSKErrorDomain
 		#define SKErrorUnknown kILSimSKErrorUnknown 

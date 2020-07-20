@@ -16,47 +16,78 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 
-static char kILSimDefaultTransactionSimulator_iOSCompletionHandlerToken = 0;
-static void* const kILSimDefaultTransactionSimulator_iOSCompletionHandlerKey = &kILSimDefaultTransactionSimulator_iOSCompletionHandlerToken;
-
 @interface ILSimDefaultTransactionSimulator_iOS : NSObject <ILSimTransactionSimulator, UIAlertViewDelegate>
 @end
 
+typedef NS_ENUM(NSInteger, Result) {
+    Success,
+    Failure,
+    Cancel
+};
+
 @implementation ILSimDefaultTransactionSimulator_iOS
 
-- (void) simulateTransaction:(ILSimSKPaymentTransaction *)transaction product:(ILSimSKProduct*) p forQueue:(ILSimSKPaymentQueue *)queue completionHandler:(void (^)(NSError *))block;
+- (void) simulateTransaction:(ILSimSKPaymentTransaction *)transaction product:(ILSimSKProduct*) p forQueue:(ILSimSKPaymentQueue *)queue completionHandler:(void (^)(NSError *))handler;
 {
-	UIAlertView* a = [[UIAlertView new] autorelease];
-	a.delegate = self;
-	objc_setAssociatedObject(a, kILSimDefaultTransactionSimulator_iOSCompletionHandlerKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-	
-	NSNumberFormatter* numberFormatter = [[NSNumberFormatter new] autorelease];
-	[numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-	[numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-	[numberFormatter setLocale:p.priceLocale];
-	NSString* formattedPrice = [numberFormatter stringFromNumber:p.price];
-	
-	a.title = [NSString stringWithFormat:@"SIMULATED: Would you like to buy %d x '%@' at %@?", transaction.payment.quantity, p.localizedTitle, formattedPrice];
-	[a addButtonWithTitle:@"Succeed Transaction"];
-	[a addButtonWithTitle:@"Fail Transaction"];
-	a.cancelButtonIndex = [a addButtonWithTitle:@"Cancel"];
-	[a show];	
+    NSNumberFormatter* numberFormatter = [[NSNumberFormatter new] autorelease];
+    [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [numberFormatter setLocale:p.priceLocale];
+    NSString* formattedPrice = [numberFormatter stringFromNumber:p.price];
+    NSString* title =
+        [NSString stringWithFormat:@"SIMULATED: Would you like to buy %ld x '%@' at %@?", (long)transaction.payment.quantity, p.localizedTitle, formattedPrice];
+
+    UIAlertController* a =
+        [UIAlertController
+            alertControllerWithTitle:title
+            message:@"Message"
+            preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* yesButton =
+        [UIAlertAction
+            actionWithTitle:@"Succeed Transaction"
+            style:UIAlertActionStyleDefault
+            handler:^(UIAlertAction * action) {
+            [self transactionDone:transaction withResult:Success completionHandler:handler];
+        }];
+
+    UIAlertAction* noButton =
+        [UIAlertAction
+            actionWithTitle:@"Fail Transaction"
+            style:UIAlertActionStyleDefault
+            handler:^(UIAlertAction * action) {
+            [self transactionDone:transaction withResult:Failure completionHandler:handler];
+        }];
+
+    UIAlertAction* cancelButton =
+        [UIAlertAction
+            actionWithTitle:@"Cancel Transaction"
+            style:UIAlertActionStyleDefault
+            handler:^(UIAlertAction * action) {
+            [self transactionDone:transaction withResult:Cancel completionHandler:handler];
+        }];
+    
+    [a addAction:yesButton];
+    [a addAction:noButton];
+    [a addAction:cancelButton];
+
+    UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    [vc presentViewController:a animated:YES completion:nil];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)transactionDone:(ILSimSKPaymentTransaction *)transaction withResult:(Result)result completionHandler:(void (^)(NSError *))completionHandler;
 {
-	void (^completionHandler)(NSError*) = objc_getAssociatedObject(alertView, kILSimDefaultTransactionSimulator_iOSCompletionHandlerKey);
 	if (!completionHandler)
 		return;
 	
-	switch (buttonIndex) {
-		case 0:
+	switch (result) {
+		case Success:
 			completionHandler(nil);
 			break;
-		case 1:
+		case Failure:
 			completionHandler([NSError errorWithDomain:kILSimSKErrorDomain code:ILSimSKErrorUnknown userInfo:nil]);
 			break;
-		case 2:
+		case Cancel:
 		default:
 			completionHandler([NSError errorWithDomain:kILSimSKErrorDomain code:ILSimSKErrorPaymentCancelled userInfo:nil]);
 			break;
