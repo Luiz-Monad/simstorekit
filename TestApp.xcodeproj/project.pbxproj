@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A537FFE24C5350D00158980 /* TestApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A91A96F24C3C30600D07656 /* TestApp.m */; };
+		4A537FFF24C5444600158980 /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A91A97824C3C55800D07656 /* Products.plist */; };
+		4A53800024C5444F00158980 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A91A97424C3C3CD00D07656 /* MainWindow.xib */; };
 		4AD3670424C5097F0047FBA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3670224C5097F0047FBA5 /* Main.storyboard */; };
 		4AD3670624C509800047FBA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3670524C509800047FBA5 /* Assets.xcassets */; };
 		4AD3670924C509800047FBA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3670724C509800047FBA5 /* LaunchScreen.storyboard */; };
@@ -221,6 +224,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A537FFF24C5444600158980 /* Products.plist in Resources */,
+				4A53800024C5444F00158980 /* MainWindow.xib in Resources */,
 				4AD3670924C509800047FBA5 /* LaunchScreen.storyboard in Resources */,
 				4AD3670624C509800047FBA5 /* Assets.xcassets in Resources */,
 				4AD3670424C5097F0047FBA5 /* Main.storyboard in Resources */,
@@ -237,6 +242,7 @@
 				4AD3674124C5125B0047FBA5 /* AppDelegate.m in Sources */,
 				4AD3674024C5125B0047FBA5 /* ViewController.m in Sources */,
 				4AD3670C24C509800047FBA5 /* main.m in Sources */,
+				4A537FFE24C5350D00158980 /* TestApp.m in Sources */,
 				4AD3674324C512970047FBA5 /* XibView.m in Sources */,
 				4AD3673F24C5125B0047FBA5 /* SceneDelegate.m in Sources */,
 			);
