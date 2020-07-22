@@ -141,8 +141,8 @@
 				4AD3670724C509800047FBA5 /* LaunchScreen.storyboard */,
 				4AD3670A24C509800047FBA5 /* Info.plist */,
 				4AD3670B24C509800047FBA5 /* main.m */,
-				4AD3674224C512970047FBA5 /* XibView.m */,
 				4AD3674424C512B10047FBA5 /* XibView.h */,
+				4AD3674224C512970047FBA5 /* XibView.m */,
 			);
 			path = TestSimStoreKit;
 			sourceTree = "<group>";

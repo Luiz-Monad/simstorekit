@@ -18,7 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //[self setTestApp:[[TestApp alloc] init]];
     return YES;
 }
 

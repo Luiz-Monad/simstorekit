@@ -11,7 +11,7 @@
 
 @interface TestApp : NSObject <SKPaymentTransactionObserver, SKProductsRequestDelegate>
 
-@property (weak, nonatomic, nullable) IBOutlet UIWindow * window;
+@property (weak, nonatomic, nullable) IBOutlet UIView * view;
 
 - (instancetype _Nonnull) init;
 - (IBAction) buy;

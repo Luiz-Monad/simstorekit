@@ -17,8 +17,13 @@
 
 - (void)prepareForInterfaceBuilder {
     [super prepareForInterfaceBuilder];
-    [self xibSetup];
-    if ([self contentView]) [[self contentView] prepareForInterfaceBuilder];
+    @try {
+        [self xibSetup];
+        if ([self contentView]) [[self contentView] prepareForInterfaceBuilder];
+    }
+    @catch (NSException * e) {
+        NSLog(@"%@", e);
+    }
 }
 
 - (void)xibSetup {
@@ -36,7 +41,7 @@
     if (!nibName) { return nil; }
     NSBundle * bundle = [NSBundle bundleForClass: [self class]];
     UINib * nib = [UINib nibWithNibName: nibName bundle: bundle];
-    return [[nib instantiateWithOwner: self options: nil] firstObject];
+    return [[nib instantiateWithOwner: nil options: nil] firstObject];
 }
 
 @end

@@ -14,7 +14,6 @@ IB_DESIGNABLE
 
 @property (strong, nonatomic, nullable) UIView * contentView;
 @property (strong, nonatomic, nullable) IBInspectable NSString * nibName;
-@property (weak, nonatomic, nullable) IBOutlet TestApp * delegate;
 
 - (void)awakeFromNib;
 - (void)prepareForInterfaceBuilder;
